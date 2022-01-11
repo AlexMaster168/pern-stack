@@ -1,0 +1,31 @@
+.menu {
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 5px 0 5px 0;
+    width: 150px;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    list-style: none;
+    box-shadow: 0 0 20px 0 #ccc;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.About {
+    background: repeating-linear-gradient(#9CECFB, #65C7F7, #0052D4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100vh;
+}
+
+.textBlock{
+    width: 500px;
+    height: 300px;
+    background: gray;
+    text-align: center;
+}
+
