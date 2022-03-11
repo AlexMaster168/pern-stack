@@ -33,7 +33,8 @@ const CreateDevice = observer(({show, onHide}) => {
     }
 
     const addDevice = () => {
-        const formData = new FormData()
+        if (rating >= 1 && rating <= 5) {
+            const formData = new FormData()
             formData.append('rating', `${rating}`)
             formData.append('name', name)
             formData.append('price', `${price}`)
@@ -42,7 +43,8 @@ const CreateDevice = observer(({show, onHide}) => {
             formData.append('typeId', device.selectedType.id)
             formData.append('info', JSON.stringify(info))
             createDevice(formData).then(data => onHide())
-        }
+        } else setRating(1); alert("Введите рейтинг от 1 до 5")
+    }
 
     return (
         <Modal

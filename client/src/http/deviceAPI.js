@@ -17,7 +17,7 @@ export const createBrand = async (brand) => {
 }
 
 export const fetchBrands = async () => {
-    const {data} = await $host.get('api/brand', )
+    const {data} = await $host.get('api/brand',)
     return data
 }
 
@@ -26,10 +26,12 @@ export const createDevice = async (device) => {
     return data
 }
 
-export const fetchDevices = async (typeId, brandId, page, limit= 5) => {
-    const {data} = await $host.get('api/device', {params: {
+export const fetchDevices = async (typeId, brandId, page, limit = 5) => {
+    const {data} = await $host.get('api/device', {
+        params: {
             typeId, brandId, page, limit
-        }})
+        }
+    })
     return data
 }
 
@@ -43,9 +45,21 @@ export const deleteOneDevice = async (id) => {
     return data
 }
 
-export const updateOneDevice = async(name, rating, price, id) => {
-    const {data} = await $host.put('api/device/' + id, {params: {
+export const updateOneDevice = async (name, rating, price, id) => {
+    const {data} = await $host.put('api/device/' + id, {
+        params: {
             name, rating, price
-        }})
+        }
+    })
+    return data
+}
+
+export const deleteType = async (id) => {
+    const {data} = await $host.delete('api/type/' + id)
+    return data
+}
+
+export const deleteBrand = async (id) => {
+    const {data} = await $host.delete('api/brand/' + id)
     return data
 }

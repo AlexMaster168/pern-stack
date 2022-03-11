@@ -49,7 +49,6 @@ const DeviceItem = ({device}) => {
                     <p>Цена: <b className='text-danger'>{new Intl.NumberFormat().format(device.price)}</b></p>
                     <Button className='mt-3'
                             variant={"outline-warning"}
-                            disabled='true'
                             onClick={() => setDeviceVisible(true)}
                     >Изменить
                     </Button>

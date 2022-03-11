@@ -65,16 +65,10 @@ class DeviceController {
     }
 
     async updateOne(req, res) {
-        let {name, price, rating} = req.query
+        let {name, price, rating} = req.body
+        let values = {name, price, rating}
         let {id} = req.params
-        const device = await Device.findOne({where:{id}})
-        if (!device) {
-            throw new Error('Не найден device');
-        }
-        device.name = name
-        device.price = price
-        device.rating = rating
-        await device.save()
+        const device = await Device.update(values, {where: {id},})
         return res.json(device)
     }
 
